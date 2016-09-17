@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body {font-size: 1.2em;}</style>
+    <title>Assignment1-Lunch Check</title>
+  </head>
+  <body>
+    <h1>Lunch Buffet</h1>
+    <div ng-controller="LunchCheckController">
+      Your Lunch Choice:
+      <input type="text"
+             ng-model="items"
+             
+             >
+       <div>
+         <button ng-click="numOfItems();">Check If Too Much</button>
+         <br>
+         <span ng-style = "style">{{message}}</span>
+
+       </div>
+
+    </div>
+
+  </body>
+</html>
