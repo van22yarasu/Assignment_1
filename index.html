@@ -13,11 +13,14 @@
       Your Lunch Choice:
       <input type="text"
              ng-model="items"
-             
+
              >
        <div>
          <button ng-click="numOfItems();">Check If Too Much</button>
          <br>
+
+         <span ng-show = "totalItems === 0"> Please enter data first!</span>
+
          <span ng-style = "style">{{message}}</span>
 
        </div>

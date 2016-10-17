@@ -7,33 +7,35 @@
   LunchCheckController.$inject = ['$scope'];
 
   function LunchCheckController($scope) {
-    $scope.items = "";
+    $scope.items = " ";
     $scope.message = " ";
     $scope.style = {color: 'black'};
 
 
     $scope.numOfItems = function () {
       var totalItems = calculateNumberOfItems($scope.items);
-      if(totalItems > 3){
-        $scope.message = "Too much!";
+      if($scope.items === " ")  {
+        $scope.message = "Please enter Items! ";
         $scope.style = {color: 'red'};
-      
+      }
+      else if(totalItems > 3){
+        $scope.message = "Too much!";
+        $scope.style = {color: 'green'};
+
 
       }
-      else if(totalItems>0){
+      else if(totalItems > 0){
         $scope.message = "Enjoy!";
         $scope.style = {color: "green"};
 
 
       }
-      else {
-        $scope.message = " ";
-      }
+
 
     };
 
     function calculateNumberOfItems(string) {
-      var totalItemsInStr = string.split(' ').length;
+      var totalItemsInStr = string.split(',').length;
 
       return totalItemsInStr;
     }
