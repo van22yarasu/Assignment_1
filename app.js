@@ -15,7 +15,7 @@
     $scope.numOfItems = function () {
       var totalItems = calculateNumberOfItems($scope.items);
       if($scope.items === " ")  {
-        $scope.message = "Please enter Items! ";
+        $scope.message = "Please enter data first! ";
         $scope.style = {color: 'red'};
       }
       else if(totalItems > 3){
